@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Receipt</title>
+    <style>
+        /* CSS styles for the receipt */
+        /* ... */
+    </style>
+</head>
+<body>
+    <h1>Receipt</h1>
+    
+    <h2>Order Details</h2>
+    <p>Order ID: @Model.OrderId</p>
+    <p>Date: @Model.OrderDate.ToString("yyyy-MM-dd")</p>
+    
+    <h2>Customer Details</h2>
+    <p>Name: @Model.CustomerName</p>
+    
+    <h2>Order Items</h2>
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+        </tr>
+        @foreach (var item in Model.OrderItems)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Quantity</td>
+                <td>@item.Price.ToString("C")</td>
+                <td>@(item.Quantity * item.Price).ToString("C")</td>
+            </tr>
+        }
+    </table>
+    
+    <h2>Total Cost: @Model.TotalCost.ToString("C")</h2>
+</body>
+</html>
