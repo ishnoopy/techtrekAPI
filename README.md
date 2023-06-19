@@ -1,4 +1,5 @@
 # techtrekAPI
+# uses ASP.Net Entity Framework.
 
 NOTE: This API is made for the frontend named "TechtrekFrontend", look for it in my repository.
 
