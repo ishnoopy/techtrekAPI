@@ -141,6 +141,7 @@ namespace techtrekAPI.Controllers
                 if (itemInDb != null)
                 {
                     itemInDb.sold += item.qty;
+                    itemInDb.stock -= item.qty;
                 }
             }
 
